@@ -3,7 +3,7 @@ import subprocess
 from flask import Flask, render_template, request
 from google.genai import Client
 
-API_KEY = "AIzaSyDLASPMkNazsgFIjMdJvJHjEPri9yJIAGg"
+API_KEY = ""
 
 client = Client(api_key=API_KEY)
 MODEL = "gemini-2.5-flash"
@@ -89,4 +89,5 @@ VIETNAMESE:
 
 
 if __name__ == "__main__":
+
     app.run(debug=True)
