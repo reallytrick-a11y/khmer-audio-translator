@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+
+<title>Khmer Audio Translator</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎧 Khmer Audio Translator</h1>
+
+<form method="POST" enctype="multipart/form-data">
+
+<input type="file" name="audio" required>
+
+<button type="submit">Translate</button>
+
+</form>
+
+<div class="result">
+
+<h2>Result</h2>
+
+<p class="title">{{ title }}</p>
+
+<div class="box">
+
+<h3>Khmer</h3>
+
+<textarea id="khmerText">{{ khmer }}</textarea>
+
+<button onclick="copyText('khmerText')">Copy</button>
+
+</div>
+
+<div class="box">
+
+<h3>Vietnamese</h3>
+
+<textarea id="vnText">{{ vietnamese }}</textarea>
+
+<button onclick="copyText('vnText')">Copy</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function copyText(id){
+
+let text=document.getElementById(id)
+
+text.select()
+
+navigator.clipboard.writeText(text.value)
+
+alert("Copied!")
+
+}
+
+</script>
+
+</body>
+
+</html>
